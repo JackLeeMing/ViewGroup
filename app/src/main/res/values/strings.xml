@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">AndroidCustomView</string>
+    <string name="str1">字符串1</string>
+    <string name="str2">字符串贰</string>
+    <string name="str3">字符串三</string>
+    <string name="str4">字符串肆</string>
+    <string name="str5">字符串⑤</string>
+    <string name="str6">字符串陆</string>
+    <string name="str7">苹果的iPhone系列手机</string>
+    <string name="str_length">苹果的iPhone系列手机在工业设计可以说是目前业界数一数二的，但是即便如此依旧有一些被果粉不断吐槽的缺点，以往机型当中背部的两条大白带就是典型的代表，不过在即将到来的iPhone7当中，苹果做出了一项大胆的调整，白条居然变弯了?</string>
+    <string name="str8">苹果的iPhone系列手机在工业设计可以说是目前业界数一数二的，但是即便如此依旧有一些被果粉不断吐槽的缺点</string>
 </resources>

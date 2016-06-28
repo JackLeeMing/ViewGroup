@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <smartbow.bss.com.androidcustomview.widget.CustomViewGroup
+        android:layout_width="match_parent"
+        android:background="@color/back"
+        android:padding="5dp"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/viewStyle"
+            android:background="@color/colorAccent"
+            android:text="@string/str1"/>
+
+        <TextView
+            style="@style/viewStyle"
+            android:background="@color/colorPrimary"
+            android:text="@string/str1"/>
+
+        <TextView
+            style="@style/viewStyle"
+            android:background="@color/colorPrimaryDark"
+            android:text="@string/str2"/>
+
+        <TextView
+            style="@style/viewStyle"
+            android:background="@color/colorAc"
+            android:text="@string/str3"/>
+    </smartbow.bss.com.androidcustomview.widget.CustomViewGroup>
+
+</LinearLayout>
