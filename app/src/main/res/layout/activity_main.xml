@@ -3,12 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     tools:context="smartbow.bss.com.androidcustomview.MainActivity">
 
-    <smartbow.bss.com.androidcustomview.widget.PicTagLayout
-        android:layout_width="300dp"
-        android:background="@mipmap/jigeng"
-        android:layout_height="200dp"/>
+    <smartbow.bss.com.androidcustomview.widget.FlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <TextView
+        style="@style/textTag"
+        android:text="@string/str_length"
+        android:background="@color/colorAccent" />
+
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str1"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str7"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str6"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str5"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str4"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str3"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str1"
+            android:background="@color/colorAccent" />
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str2"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            style="@style/textTag"
+            android:text="@string/str8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent" />
+
+    </smartbow.bss.com.androidcustomview.widget.FlowLayout>
 </RelativeLayout>

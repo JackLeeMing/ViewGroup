@@ -79,7 +79,7 @@ public class FlowLayout extends ViewGroup {
         int modeHeight = MeasureSpec.getMode(heightMeasureSpec);
 
         int width = 0;
-        int height = getPaddingTop() + getPaddingBottom();
+       int height = getPaddingTop() + getPaddingBottom();
 
         int lineWidth = 0;
         int lineHeight = 0;
@@ -108,6 +108,8 @@ public class FlowLayout extends ViewGroup {
             LayoutParams lp = (LayoutParams) child.getLayoutParams();
             int horizontalMargin = lp.leftMargin+lp.rightMargin;
 
+            int verticalMargin = lp.topMargin+lp.bottomMargin;
+
             int childWidthMode = MeasureSpec.AT_MOST;
             int childWidthSize = sizeWidth-widthUsed;
 
@@ -117,10 +119,12 @@ public class FlowLayout extends ViewGroup {
             if(lp.width == LayoutParams.MATCH_PARENT) {
                 childWidthMode = MeasureSpec.EXACTLY;
                 childWidthSize -= (horizontalMargin);
-            }else if(lp.width == LayoutParams.WRAP_CONTENT){
+            }
+            //*必须测绘wrap_content 情景下的模式
+            else if(lp.width == LayoutParams.WRAP_CONTENT){
                 childWidthMode = MeasureSpec.AT_MOST;
                 childWidthSize = sizeWidth-horizontalMargin-widthUsed;
-            } else if(lp.width >= 0) {
+            }else if(lp.width >= 0) {
                 childWidthMode = MeasureSpec.EXACTLY;
                 childWidthSize = lp.width;
             }
@@ -128,10 +132,12 @@ public class FlowLayout extends ViewGroup {
             if(lp.height >= 0) {
                 childHeightMode = MeasureSpec.EXACTLY;
                 childHeightSize = lp.height;
-            } else if (modeHeight == MeasureSpec.UNSPECIFIED) {
+            }  else if (modeHeight == MeasureSpec.UNSPECIFIED) {
                 childHeightMode = MeasureSpec.UNSPECIFIED;
                 childHeightSize = 0;
             }
+
+
 
             child.measure(MeasureSpec.makeMeasureSpec(childWidthSize, childWidthMode),
                           MeasureSpec.makeMeasureSpec(childHeightSize, childHeightMode));//重新测绘
