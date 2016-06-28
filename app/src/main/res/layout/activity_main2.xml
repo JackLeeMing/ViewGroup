@@ -4,6 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:layout_width="match_parent"
+        android:text="START_WITH LIST"
+        android:onClick="startList"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:text="START_WITH STRING"
+        android:onClick="startStr"
+        android:layout_height="wrap_content" />
+
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="30dp"
@@ -26,6 +38,34 @@
             android:id="@+id/flipper"
             android:layout_toRightOf="@id/imageFlag"
             android:layout_toEndOf="@id/imageFlag"
+            android:layout_centerVertical="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/xml_oval_half_transparent_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        <ImageView
+            android:id="@+id/imageFlag2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/ic_loudspeaker"
+            android:contentDescription="@string/app_name"
+            android:layout_height="wrap_content" />
+
+        <ViewFlipper
+            android:id="@+id/flipper2"
+            android:layout_toRightOf="@id/imageFlag2"
+            android:layout_toEndOf="@id/imageFlag2"
             android:layout_centerVertical="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

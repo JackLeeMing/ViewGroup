@@ -10,6 +10,8 @@
     <string name="str_length">苹果的iPhone系列手机在工业设计可以说是目前业界数一数二的，但是即便如此依旧有一些被果粉不断吐槽的缺点，以往机型当中背部的两条大白带就是典型的代表，不过在即将到来的iPhone7当中，苹果做出了一项大胆的调整，白条居然变弯了?</string>
     <string name="str8">苹果的iPhone系列手机在工业设计可以说是目前业界数一数二的，但是即便如此依旧有一些被果粉不断吐槽的缺点</string>
 
+    <string name="marquee_texts">心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！心中有阳光，脚底有力量！</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
