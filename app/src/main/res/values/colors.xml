@@ -7,4 +7,6 @@
     <color name="colorAc">#ff00ff</color>
 
     <color name="back">#898888</color>
+    <color name="transparent">#00000000</color>
+    <color name="half_transparent">#4f000000</color>
 </resources>
