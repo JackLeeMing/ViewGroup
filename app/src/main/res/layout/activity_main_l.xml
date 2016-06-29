@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="smartbow.bss.com.androidcustomview.MainLActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:text="@string/str2"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@android:color/white"
+        android:layout_height="wrap_content" />
+    <smartbow.bss.com.androidcustomview.widget.MyView
+        android:id="@+id/textTest"
+        android:layout_width="wrap_content"
+        Text="@string/str1"
+        app:textShow="@string/marquee_texts"
+        app:textSize="18sp"
+        app:textColor="#0fe113"
+        app:gravity="left"
+        android:padding="5dp"
+        android:background="#000000"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

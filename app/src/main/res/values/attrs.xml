@@ -6,4 +6,16 @@
     <declare-styleable name="FlowLayout_Layout">
         <attr name="android:layout_gravity" />
     </declare-styleable>
+
+    <declare-styleable name="MyView">
+        <attr name="textShow" format="string|reference"/>
+        <attr name="textSize" format="dimension|reference"/>
+        <attr name="textColor" format="color|reference"/>
+        <attr name="gravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+    </declare-styleable>
+
 </resources>
