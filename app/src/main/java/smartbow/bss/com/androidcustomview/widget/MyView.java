@@ -30,6 +30,7 @@ public class MyView extends View {
     private Paint.Align align  = Paint.Align.LEFT;
 
     Rect rect;
+    Rect rect2;
     public MyView(Context context) {
         this(context,null);
     }
@@ -123,6 +124,7 @@ public class MyView extends View {
 
 
         rect = new Rect();
+        rect2 = new Rect();
         paint.getTextBounds(text,0,text.length(),rect);
         TLog.error(text);
 
@@ -139,39 +141,44 @@ int count = 0;
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
-        int width;
-        int totalHeight;
-        int flagHeight;
+        int width = 0;
+        int lineWidth;
+        int lineHeight;
+        int height=0;
+        int widthUsed = getPaddingLeft()+getPaddingRight();
+        int heightUsed = getPaddingBottom()+getPaddingTop();
 
-
-        paint.getTextBounds(text,0,text.length(),rect);
-
-        flagHeight = rect.height();
 
         int noticeLength = text.length();
-        int limit =  (widthSize-getPaddingLeft()-getPaddingRight())/(int) textSize;
-        TLog.error(count+" limit:"+limit+" flagHeight:"+flagHeight);
+        int limit =  (int)((widthSize-getPaddingLeft()-getPaddingRight())/ textSize);
         if (noticeLength <= limit) {
-            totalHeight = flagHeight;
+            paint.getTextBounds(text,0,text.length(),rect);
+            lineHeight = rect.height()+5;
+            height = lineHeight+5;
+            lineWidth = rect.width();
+            width = lineWidth;
+
         } else {
             int size = noticeLength / limit + (noticeLength % limit != 0 ? 1 : 0);
             TLog.error(count+" size: "+size);
-            totalHeight = flagHeight*size;
+            for (int i = 0; i < size; i++) {
+                int startIndex = i * limit;
+                int endIndex = ((i + 1) * limit >= noticeLength ? noticeLength : (i + 1) * limit);
+                String s = text.substring(startIndex,endIndex);
+                paint.getTextBounds(s,0,s.length(),rect);
+                lineHeight = rect.height()+5;
+                lineWidth = rect.width()+5;
+                width = Math.max(lineWidth,width);
+                height += lineHeight;
+            }
         }
 
-        if (widthMode == MeasureSpec.AT_MOST || widthMode == MeasureSpec.UNSPECIFIED){
-            width = rect.width()+getPaddingLeft()+getPaddingRight();
-        }else {
-            width = widthSize;
-        }
+        height+= heightUsed;
+        width+= widthUsed;
 
-        if (width > widthSize){
-            width = widthSize;
-        }
-
-        totalHeight += getPaddingBottom()+getPaddingTop();
-        TLog.error(count+" height: "+totalHeight);
-        setMeasuredDimension(widthMode == MeasureSpec.EXACTLY?widthSize:width,heightMode == MeasureSpec.EXACTLY?heightSize:totalHeight);
+        setMeasuredDimension(
+                widthMode == MeasureSpec.EXACTLY ? widthSize:width,
+                heightMode == MeasureSpec.EXACTLY?heightSize:height);
 
     }
 
@@ -188,18 +195,17 @@ int count = 0;
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawColor(Color.BLUE);
         //canvas.drawText(text,);
         if (paint.getTextAlign() == Paint.Align.CENTER) {
             x = getWidth() / 2 + getPaddingLeft();
         }
 
         if (paint.getTextAlign() == Paint.Align.LEFT){
-            x = getPaddingLeft();
+            x = getPaddingLeft()+5;
         }
 
         if (paint.getTextAlign() == Paint.Align.RIGHT){
-            x = getWidth()-getPaddingRight();
+            x = getWidth()-getPaddingRight()-5;
         }
 
         y =  rect.height()+getPaddingTop() - Math.abs(rect.bottom);
@@ -209,12 +215,12 @@ int count = 0;
 
         canvas.drawLine(0,y,getWidth(),y,paint);
         int noticeLength = text.length();
-        int dpW = getWidth();
-        int limit =  dpW/(int) textSize;
+        int dpW = getWidth()-getPaddingRight()-getPaddingLeft();
+        int limit =  (int)(dpW/textSize);
 
         TLog.error("limit: "+ limit+" width: "+getWidth());
 
-        if (noticeLength <= limit) {
+        if (noticeLength < limit) {
             canvas.drawText(text,x,y, paint);//短了就绘制
         } else {
             int size = noticeLength / limit + (noticeLength % limit != 0 ? 1 : 0);
@@ -232,9 +238,14 @@ int count = 0;
         paint.setStrokeWidth(1);
         canvas.drawLine(x,0,x,getHeight(),paint);
 
-        canvas.restore();
+        rect2.left = getPaddingLeft();
+        rect2.top = getPaddingTop();
+        rect2.bottom = getHeight()-getPaddingBottom();
+        rect2.right = getWidth()-getPaddingRight();
 
-        canvas.drawRect(getPaddingLeft(),getPaddingTop(),rect.width(),rect.height()+getPaddingTop(),rectPaint);
+        canvas.drawRect(rect2,rectPaint);
+
+        canvas.restore();
     }
 
 }
