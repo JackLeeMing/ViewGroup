@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         getTextView("界面.....7");
         getTextView("5. 个人博客：sunfusheng.com");
 
+
         flipper.startFlipping();
     }
 

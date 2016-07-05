@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:id="@+id/rootTwo"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="#666464"
+    android:layout_width="match_parent"
+    android:layout_height="200dp">
+    <smartbow.bss.com.androidcustomview.animator.MyAnimaView
+        android:id="@+id/circleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/action_animation"
+        android:layout_width="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:clickable="true"
+        android:enabled="true"
+        android:onClick="paowuxian"
+        android:text="@string/action_animation"
+        android:textColor="@android:color/white"
+        android:background="@drawable/circle"
+        android:layout_height="50dp" />
+</RelativeLayout>

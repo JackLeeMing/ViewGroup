@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootThree"
+    android:layout_width="match_parent"
+    android:foreground="?android:attr/itemBackground"
+    android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/textList"
+    android:orientation="vertical"
+    android:textColor="@android:color/background_dark"
+    android:textStyle="bold"
+    android:textSize="16sp"
+    android:gravity="center|start"
+    android:background="@android:color/holo_blue_light"
+    tool:text="AS"
+    android:text="@string/action_animation"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:tool="http://schemas.android.com/tools"/>
+</RelativeLayout>

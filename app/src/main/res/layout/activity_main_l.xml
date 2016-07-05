@@ -2,31 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="smartbow.bss.com.androidcustomview.MainLActivity">
-
-    <smartbow.bss.com.androidcustomview.widget.TextV
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:text="@string/str_length"
-        android:textSize="18sp"
-        android:gravity="center"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@android:color/white"
-        android:padding="5dp"
-        android:layout_height="wrap_content" />
-
-    <smartbow.bss.com.androidcustomview.widget.MyView
-        android:layout_marginTop="5dp"
-        android:id="@+id/textTest"
-        android:layout_width="match_parent"
-        Text="@string/str1"
-        app:textShow="@string/str_length"
-        app:textSize="18sp"
-        app:textColor="#ffffff"
-        app:gravity="left"
-        android:padding="5dp"
-        android:background="@color/colorPrimaryDark"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="match_parent"/>
 </LinearLayout>
